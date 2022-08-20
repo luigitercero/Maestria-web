@@ -14,4 +14,4 @@ const Equipos = () => {
     </div>
   );
 }
-return Equipos;
+export default Equipos;
