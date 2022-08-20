@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from "react";
 import NavBar from "../components/NavBar/NavBar";
 import { Container, Input, Segment } from 'semantic-ui-react'
+import axios from 'axios'
 
 /* about:inspect to see debug type about:inspect int search bar  */
 // http://127.0.0.1:8888/predict
@@ -26,10 +27,8 @@ const Home = () => {
     '2': {'question': '¿Quién estuvo implicado?',  'response': {'score': 0.04098021984100342,   'start': 207,   'end': 221,   'answer': 'Sandra Torres.'}}, '3': {'question': '¿Corrupción?',  'response': {'score': 0.15366223454475403,   'start': 636,   'end': 654,   'answer': 'lavado de dinero.'}}}
 
     useEffect(() => {
-      window
-      .fetch('http://127.0.0.1:8888/')
-      .then(res => res.json())
-      .then(data => setcandidato(data))
+      axios.get('http://127.0.0.1:8888')
+      .then(data => console.log(data))
     },[]);
   
   const response = (candidato) => {
