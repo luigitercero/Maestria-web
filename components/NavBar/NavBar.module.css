@@ -8,3 +8,10 @@
   align-items: center;
 }
 
+.search_container{
+
+  justify-content: space-around;
+  margin: 6px;
+
+}
+
