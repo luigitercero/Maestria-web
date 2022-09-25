@@ -7,8 +7,8 @@ const InputExampleIcon = ({onChange, value}) => {
 
   return(
     <>
-      <Input onChange={(e) => onChange(e)} icon='search' placeholder='Search...' />
-      {console.log(value)}
+      <Input onChange={(e) => onChange(e)} icon='search' placeholder='Buscar...' />
+      {/* console.log(value) */}
     </>
   )
 }

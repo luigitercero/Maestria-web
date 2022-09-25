@@ -5,12 +5,9 @@ import { Button } from 'semantic-ui-react'
 import { Menu, Container, Grid } from 'semantic-ui-react'
 import Input from '../Input/Search'
 
-const NavBar = () => {
-  const [search, setSearch] = React.useState('')
+const NavBar = ({handleSearch, search, handleClick}) => {
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value)
-  }
+  
 
   return (
     <div className={styles.container}>
@@ -27,6 +24,7 @@ const NavBar = () => {
             
                 <Container textAlign='right' className={styles.search_container}>
                   <Input onChange={handleSearch} value={search}/>
+                  <Button primary onClick={handleClick}>Consutar</Button>
                 </Container>
 
           </Menu>
