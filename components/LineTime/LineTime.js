@@ -7,11 +7,9 @@ const LineTime = ({news}) => {
   Object.keys(question_object).forEach(function(key) {
     news_list.push(question_object[key])
   })
-  let itemList=news_list.map((questioncontent)=>{
-    
-    const { question, response } = questioncontent
-    return (<>
-      
+
+  const news_list_render = (question, response) => {
+    return (
       <div class={styles.momento}>
         <p>{question}</p>
         <div class={styles.descripcion}>
@@ -19,6 +17,15 @@ const LineTime = ({news}) => {
           {response.score}
         </div>
       </div>
+    )
+    }
+  let itemList=news_list.map((questioncontent)=>{
+    
+    const { question, response } = questioncontent
+    return (<>
+      {(response.score > 0.013) 
+      && 
+      news_list_render(question,response) }
     </>)
   })
 

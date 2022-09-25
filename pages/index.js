@@ -44,6 +44,7 @@ const Home = () => {
                           "8": { "question": `¿Qué sucede con ${search}?` },
                           "9": { "question": `¿Cómo ocurre el suceso?`},
                           "10": { "question": `¿Cuándo ocurrió?`},
+                          "11": { "question": `¿Qué acción toma ${search}?`},
 
                       }}
       ] 
@@ -53,7 +54,8 @@ const Home = () => {
   }
 
   const getData= (req)=>{
-    axios.post('http://127.0.0.1:8888/predict', req)
+    console.log(process.env.HOST)
+    axios.post(`http://127.0.0.1:8888/predict`, req)
       .then(res => { 
         console.log(res);  
         setrespons_test(res.data.data)
