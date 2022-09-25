@@ -35,7 +35,16 @@ const Home = () => {
           {"word_to_search": search, 
               "question_object": { "1": { "question": "¿qué sucedió?" },
                           "2": { "question": "¿Quienes son los actores del Hecho?" },
-                          "3": { "question": "¿de Quienes se está hablando?" },
+                          "3": { "question": "¿Quienes se está hablando?" },
+                          "4": { "question": `¿Qué le ocurre con ${search}?` },
+                          "5": { "question": `¿Qué dijo ${search}?` },
+                          "6": { "question": `¿Qué expresa ${search}?` },
+                          "7": { "question": `¿Quién es ${search}?` },
+                          "7": { "question": `¿Existen otros actores diferentes a ${search}?` },
+                          "8": { "question": `¿Qué sucede con ${search}?` },
+                          "9": { "question": `¿Cómo ocurre el suceso?`},
+                          "10": { "question": `¿Cuándo ocurrió?`},
+
                       }}
       ] 
 
