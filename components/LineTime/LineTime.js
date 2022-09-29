@@ -8,35 +8,28 @@ const LineTime = ({news}) => {
     news_list.push(question_object[key])
   })
 
-  const news_list_render = (question, response) => {
+  const news_list_render = (question, response, index) => {
     return (
-      <div class={styles.momento}>
+      <div key={index} className={styles.momento}>
         <p>{question}</p>
-        <div class={styles.descripcion}>
-          {response.answer + " "}
+        <div className={styles.descripcion}>
+          <p>{response.answer + " "}</p>
           {response.score}
         </div>
       </div>
     )
     }
-  let itemList=news_list.map((questioncontent)=>{
-    
-    const { question, response } = questioncontent
-    return (<>
-      {(response.score > 0.013) 
-      && 
-      news_list_render(question,response) }
-    </>)
-  })
 
   return (
     <>
       <h2>{title}</h2> 
       <h4>{word_to_search}</h4> 
       <h4>{date}</h4> 
-      <div class={styles.linea_tiempo}>
-      
-        {itemList}
+      <div className={styles.linea_tiempo}>
+        {news_list?.map(({ question, response }, index)=>(
+          (response.score > 0.013) 
+              &&  news_list_render(question,response, index) 
+        ))}
     </div>
     </>
     
